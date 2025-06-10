@@ -33,17 +33,31 @@
       position: relative;
     }
     .developer-info {
-      position: relative;
-      top: 0.1px; right: 1px; z-index: 10;
-    }
-    .developer-info img {
-      width: 28px; height: 28px; object-fit: cover;
-      border-radius: 50%; border: 0.21px solid white; cursor: pointer;
-      transition: box-shadow 0.2s;
-    }
-    .developer-info img:focus, .developer-info img:hover {
-      box-shadow: 1 0 0 3px #ff4081; outline: none;
-    }
+  position: fixed;         /* Fixed position */
+  top: 12px;               /* Distance from top */
+  right: 18px;             /* Distance from right */
+  z-index: 1100;           /* Above most items */
+  background: none;        /* No background */
+  padding: 0;
+}
+
+.developer-info img {
+  width: 32px;             /* Small icon size */
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s;
+  background: #fff;
+}
+.developer-info img:focus,
+.developer-info img:hover {
+  box-shadow: 0 0 0 3px #ff4081;
+  border: 2px solid #ff4081;
+}
+    box-shadow: 0 0 0 3px #ff4081;
     .lang-switcher {
       position: absolute; left: 10px; top: 10px; z-index: 40;
     }
@@ -365,6 +379,7 @@
       .whatsapp-btn { bottom: 20px; right: 10px; width: 42px; height: 42px;}
       .whatsapp-btn img { width: 24px; height: 24px; }
     }
+    
   </style>
 </head>
 <body>
@@ -535,7 +550,7 @@
 
       <label for="item" data-tr="type-of-item">Type of Item</label>
       <select id="item" name="item" required>
-        <option value="">-- <span data-tr="select">Select</span> --</option>
+        <option value="" data-tr="select">-- Select --</option>
         <optgroup label="Marketing & Advertising">
           <option value="banner" data-tr="banners">Banners</option>
           <option value="flyer" data-tr="flyers">Flyers</option>
